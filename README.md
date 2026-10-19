@@ -37,27 +37,27 @@ Solid boxes are **implemented in the notebooks**; dashed boxes are the **SageMak
 ```mermaid
 flowchart LR
     subgraph NB["✅ Implemented — notebooks (scikit-learn + XGBoost)"]
-        A[housing.csv<br/>20,640 × 10] --> B[Cleaning & checks<br/>nulls · duplicates · caps]
-        B --> C[Feature engineering<br/>3 ratios + 3 haversine distances]
-        C --> D[Stratified 80/20 split<br/>by income band]
-        D --> E[Pipelines<br/>impute · log1p · scale · one-hot]
-        E --> F[Train 6 models<br/>5-fold CV]
-        F --> G[RandomizedSearchCV<br/>XGBoost & Random Forest]
-        G --> H[Test-set evaluation<br/>MAE · MSE · RMSE · R²<br/>capped vs uncapped · permutation importance]
-        H --> I[predict_price&#40;&#41;<br/>best model: tuned XGBoost]
+        A["housing.csv<br/>20,640 × 10"] --> B["Cleaning & checks<br/>nulls · duplicates · caps"]
+        B --> C["Feature engineering<br/>3 ratios + 3 haversine distances"]
+        C --> D["Stratified 80/20 split<br/>by income band"]
+        D --> E["Pipelines<br/>impute · log1p · scale · one-hot"]
+        E --> F["Train 6 models<br/>5-fold CV"]
+        F --> G["RandomizedSearchCV<br/>XGBoost & Random Forest"]
+        G --> H["Test-set evaluation<br/>MAE · MSE · RMSE · R²<br/>capped vs uncapped · permutation importance"]
+        H --> I["predict_price()<br/>best model: tuned XGBoost"]
     end
 
     subgraph AWS["☁️ Designed — AWS SageMaker (docs only)"]
-        S3[(S3 raw data<br/>versioned · SSE-KMS)] --> PJ[Processing job<br/>validation rules]
-        PJ --> FS[(Feature Store<br/>raw + engineered groups)]
-        FS --> TJ[Training + Automatic<br/>Model Tuning]
-        TJ --> QG{Quality gate<br/>R² ≥ 0.85}
-        QG -- pass --> MR[(Model Registry<br/>pending → approved)]
-        QG -- fail --> STOP[Stop · alert via SNS]
-        MR --> EP[Real-time endpoint<br/>+ Batch Transform]
-        EP --> MON[Model Monitor · Clarify<br/>CloudWatch alarms]
+        S3[("S3 raw data<br/>versioned · SSE-KMS")] --> PJ["Processing job<br/>validation rules"]
+        PJ --> FS[("Feature Store<br/>raw + engineered groups")]
+        FS --> TJ["Training + Automatic<br/>Model Tuning"]
+        TJ --> QG{"Quality gate<br/>R² ≥ 0.85"}
+        QG -- pass --> MR[("Model Registry<br/>pending → approved")]
+        QG -- fail --> STOP["Stop · alert via SNS"]
+        MR --> EP["Real-time endpoint<br/>+ Batch Transform"]
+        EP --> MON["Model Monitor · Clarify<br/>CloudWatch alarms"]
         MON -. drift alert .-> PIPE
-        PIPE[SageMaker Pipelines<br/>CI/CD trigger: GitHub Actions / CodePipeline] -.-> PJ
+        PIPE["SageMaker Pipelines<br/>CI/CD trigger: GitHub Actions / CodePipeline"] -.-> PJ
     end
 
     A -.-> S3
@@ -188,11 +188,11 @@ Predictions are **block-group medians from 1990 data**, censored at $500,001. Lo
 
 **MSAAI-540 — Machine Learning Operations** · _&lt;University / term — fill in&gt;_
 
-| Name |
+| Name | Role |
 |---|---|
-| Hemlatha Kaur Saran |
-| Bharath TS |
-| Zoher Sabunwala |
+| Bharath T S ([@bharath-ts](https://github.com/bharath-ts)) | _&lt;role&gt;_ |
+| _&lt;Teammate&gt;_ | _&lt;role&gt;_ |
+| _&lt;Teammate&gt;_ | _&lt;role&gt;_ |
 
 Dataset: California Housing, 1990 US Census (Pace & Barry, 1997), as distributed with *Hands-On Machine Learning* (A. Géron).
 
