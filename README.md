@@ -124,19 +124,12 @@ Held-out test set (4,128 block groups), from [`notebooks/01_house_price_regressi
 msaai-540-mlops/
 ├── .github/workflows/ci.yml        # pytest on every push / PR
 ├── data/
-│   └── README.md                   # how to get housing.csv (not committed)
+│   └── README.md                   # how to get housing.csv
 ├── docs/
-│   ├── ml-system-design.md         # ML system design (Markdown)
 │   └── ML_System_Design.docx       # original design document
 ├── images/                         # figures exported from notebook 01
 ├── notebooks/
 │   ├── 01_house_price_regression.ipynb     # executed run — source of all reported results
-│   └── 02_house_price_regression_v2.ipynb  # refined, Colab-ready version (unexecuted)
-├── src/
-│   └── features.py                 # add_features() / haversine_km() shared by training & serving
-├── tests/
-│   └── test_features.py            # unit tests for feature engineering
-├── pyproject.toml                  # pytest config
 ├── requirements.txt
 ├── LICENSE                         # Apache 2.0
 └── README.md
@@ -163,7 +156,7 @@ jupyter lab notebooks/
 | Notebook | What it does | Notes |
 |---|---|---|
 | [`01_house_price_regression.ipynb`](notebooks/01_house_price_regression.ipynb) | Full 9-stage workflow: cleaning → EDA → features → 6 models with 5-fold CV → tuning → test evaluation → `predict_price()` | Run top-to-bottom (*Run All*). XGBoost tuning (15 iters × 3 folds) takes a few minutes on a laptop. |
-| [`02_house_price_regression_v2.ipynb`](notebooks/02_house_price_regression_v2.ipynb) | Same workflow, refactored: auto-locates `housing.csv` (or Colab upload), adds Sacramento to distance features, saves `best_house_price_model.joblib`, auto-generates the results table | Set `FAST_MODE = True` in the first code cell for a quick run. Numbers may differ slightly from notebook 01. |
+
 
 **Predict for a new area** (after running either notebook):
 
