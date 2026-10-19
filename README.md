@@ -188,11 +188,11 @@ Predictions are **block-group medians from 1990 data**, censored at $500,001. Lo
 
 **MSAAI-540 — Machine Learning Operations** · _&lt;University / term — fill in&gt;_
 
-| Name | Role |
-|---|---|
-| Bharath T S ([@bharath-ts](https://github.com/bharath-ts)) | _&lt;role&gt;_ |
-| _&lt;Teammate&gt;_ | _&lt;role&gt;_ |
-| _&lt;Teammate&gt;_ | _&lt;role&gt;_ |
+| Name | 
+| Hemlatha Kaur Saran | 
+| Bharath T S | 
+| Zoher Sabunwala | 
+
 
 Dataset: California Housing, 1990 US Census (Pace & Barry, 1997), as distributed with *Hands-On Machine Learning* (A. Géron).
 
