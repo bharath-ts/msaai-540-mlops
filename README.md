@@ -186,7 +186,7 @@ Predictions are **block-group medians from 1990 data**, censored at $500,001. Lo
 
 ## 👥 Team & credits
 
-**MSAAI-540 — Machine Learning Operations** · _&lt;University / term — fill in&gt;_
+**MSAAI-540 — Machine Learning Operations - University of SanDiego** 
 
 | Name | 
 | Hemlatha Kaur Saran | 
